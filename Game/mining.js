@@ -16,7 +16,7 @@ const langData = {
     'noaccount': 'Bạn chưa có tài khoản',
     'haveaccount': 'Bạn đã có tài khoản',
     'success': 'Thành công',
-    'error': 'Lỗi', 
+    'error': 'Lỗi',
     'menu': 'Chưa có',
     'info': 'Thông tin người chơi\nCấp độ: {level}\nKinh nghiệm: {exp}\n\nThông tin khu vực\n{mapInfo}\n\nThông tin trang bị\n{equipInfo}'
   }
@@ -44,7 +44,7 @@ async function loadData() {
 
 (async () => {
   await loadData();
-  setInterval(loadData, 1000); 
+  setInterval(loadData, 1000);
 })();
 
 async function onCall({ message, args, getLang }) {
@@ -75,7 +75,12 @@ async function onCall({ message, args, getLang }) {
         .replace('{mapInfo}', userMapInfo)
         .replace('{equipInfo}', equippedItemInfo);
 
-      message.reply(infoMessage);
+      const image = equippedItem.url;
+      const imageStream = await global.getStream(image);
+      await message.reply({
+        body: infoMessage,
+        attachment: [imageStream]
+      });
     }
   } else if (args[0] === 'register') {
     if (!data[targetID]) {
@@ -96,7 +101,7 @@ async function onCall({ message, args, getLang }) {
     } else {
       message.reply(getLang("haveaccount"));
     }
-   } else if (args[0] === 'mine') {
+  } else if (args[0] === 'mine') {
     const user = data[targetID];
     if (!user) {
       message.reply(getLang("noaccount"));
@@ -111,7 +116,7 @@ async function onCall({ message, args, getLang }) {
 
     const currentTime = Date.now();
     const lastMineTime = cooldowns[targetID] || 0;
-    const cooldownDuration = equippedItem.countdown * 1000; // Convert to milliseconds
+    const cooldownDuration = equippedItem.countdown * 1000; 
 
     if (currentTime - lastMineTime < cooldownDuration) {
       const remainingCooldown = Math.ceil((lastMineTime + cooldownDuration - currentTime) / 1000);
@@ -125,18 +130,13 @@ async function onCall({ message, args, getLang }) {
       return;
     }
 
-    // Calculate the mined amount based on the equipped item's speed
     const minedAmount = equippedItem.speed;
-
-    // Calculate experience points based on mined amount and map's buff
     const expEarned = minedAmount * userMapData.buff;
 
-    cooldowns[targetID] = currentTime; // Set cooldown timestamp
+    cooldowns[targetID] = currentTime;
     try {
-      // Update user's data and save to file
-      user.exp += expEarned; // Accumulate exp
+      user.exp += expEarned;
 
-      // Automatically convert exp to levels
       while (user.exp >= (user.lv === 1 ? 50 : user.lv * 50)) {
         user.exp -= (user.lv === 1 ? 50 : user.lv * 50);
         user.lv++;
@@ -156,9 +156,3 @@ export default {
   langData,
   onCall
 };
-
-
-
-
-
-
