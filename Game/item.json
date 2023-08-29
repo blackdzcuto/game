@@ -1,0 +1,79 @@
+{
+  "item0": {
+    "name": "phép thuật tăng tốc",
+    "speed": "1",
+    "countdown": "5",
+    "price": "0",
+    "url": "https://example.com"
+  },
+  "item1": {
+    "name": "ngọc lửa đỏ",
+    "speed": "4",
+    "countdown": "15",
+    "price": "1000",
+    "url": "https://example.com"
+  },
+  "item2": {
+    "name": "quang cảnh pha lê",
+    "speed": "6",
+    "countdown": "20",
+    "price": "1500",
+    "url": "https://example.com"
+  },
+  "item3": {
+    "name": "hỏa ngọc",
+    "speed": "8",
+    "countdown": "25",
+    "price": "2000",
+    "url": "https://example.com"
+  },
+  "item4": {
+    "name": "lá rừng bay",
+    "speed": "10",
+    "countdown": "30",
+    "price": "2500",
+    "url": "https://example.com"
+  },
+  "item5": {
+    "name": "ngôi sao tinh thần",
+    "speed": "12",
+    "countdown": "35",
+    "price": "3000",
+    "url": "https://example.com"
+  },
+  "item6": {
+    "name": "hỏa diệu",
+    "speed": "14",
+    "countdown": "40",
+    "price": "3500",
+    "url": "https://example.com"
+  },
+  "item7": {
+    "name": "hòa quyền",
+    "speed": "16",
+    "countdown": "45",
+    "price": "4000",
+    "url": "https://example.com"
+  },
+  "item8": {
+    "name": "huyền thoại",
+    "speed": "18",
+    "countdown": "50",
+    "price": "4500",
+    "url": "https://example.com"
+  },
+  "item9": {
+    "name": "thần long",
+    "speed": "20",
+    "countdown": "55",
+    "price": "5000",
+    "url": "https://example.com"
+  },
+  "item10": {
+    "name": "rạng đông",
+    "speed": "22",
+    "countdown": "60",
+    "price": "5500",
+    "url": "https://example.com"
+  }
+}
