@@ -1,31 +1,31 @@
 {
   "map0": {
-    "name": "rừng sương mù",
+    "name": "mistwood forest",
     "buff": 1,
     "lv": 0
   },
   "map1": {
-    "name": "thành phố tương lai",
+    "name": "city of tomorrow",
     "buff": 2,
     "lv": 2
   },
   "map2": {
-    "name": "đỉnh núi hắc hóa",
+    "name": "shadowpeak mountain",
     "buff": 2,
     "lv": 5
   },
   "map3": {
-    "name": "sa mạc hoang dã",
+    "name": "desolate wilds",
     "buff": 4,
     "lv": 10
   },
   "map4": {
-    "name": "biển vô tận",
+    "name": "eternal seas",
     "buff": 5,
     "lv": 15
   },
   "map5": {
-    "name": "thung lũng hoa anh đào",
+    "name": "valley of blossoming sakura",
     "buff": 6,
     "lv": 20
   }
