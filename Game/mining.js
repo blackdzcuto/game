@@ -146,7 +146,7 @@ async function onCall({ message, args, getLang }) {
       }
 
       await fs.writeFile('plugins/commands/Game/data.json', JSON.stringify(data, null, 2));
-      message.reply(`[⚜️] ➜ Bạn đã đào được ${minedAmount} quặng và nhận được ${expEarned} kinh nghiệm,${expEarned} $. Tổng Kinh nghiệm của bạn là ${user.exp} và cấp độ hiện tại là ${user.lv}.`);
+      message.reply(`[⚜️] ➜ Bạn đã đào được ${minedAmount} quặng. Bạn nhận được ${expEarned} kinh nghiệm  và ${expEarned} $. Tổng Kinh nghiệm của bạn là ${user.exp} và cấp độ hiện tại là ${user.lv}.`);
     } catch (error) {
       console.error(error);
       message.reply(getLang("error"));
